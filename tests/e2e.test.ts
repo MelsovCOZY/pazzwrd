@@ -12,9 +12,9 @@ describe("e2e: pazzwrd global command", () => {
   test("pazzwrd password matches mixed separator pattern", async () => {
     const result = await $`pazzwrd`.text();
     const password = result.trim();
-    // Same format: Word[num][sym]Word[num][sym]Word[num][sym]Word
+    // 5 words, 4 mixed separators
     expect(password).toMatch(
-      /^[A-Z][a-z]+\d{2}[!@#$%&*][A-Z][a-z]+\d{2}[!@#$%&*][A-Z][a-z]+\d{2}[!@#$%&*][A-Z][a-z]+$/
+      /^([A-Z][a-z]+\d{2}[!@#$%&*]){4}[A-Z][a-z]+$/
     );
   });
 
