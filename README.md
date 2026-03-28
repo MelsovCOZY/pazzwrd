@@ -56,7 +56,7 @@ Full customization through a step-by-step prompt:
 - Word lists are sourced from [EFF dice word lists](https://www.eff.org/dice) and POS-tagged English word lists (nouns, verbs, adjectives, adverbs)
 - Randomness comes from `crypto.getRandomValues()` with rejection sampling to eliminate modulo bias
 - Interactive mode shows entropy and estimated time to crack so you can compare configs
-- Default config (~73 bits of entropy, ~5 centuries to crack at 1 trillion guesses/sec) is strong enough for most accounts
+- Default config (~67 bits of entropy, ~4 years to crack at 1 trillion guesses/sec) — use 5 words or random mode for higher security
 
 ## Options
 

@@ -65,24 +65,24 @@ describe("loadPOSWordLists", () => {
     expect(lists.adverbs.length).toBeGreaterThan(0);
   });
 
-  test("nouns has 2000+ words", async () => {
+  test("nouns has 500+ words", async () => {
     const lists = await loadPOSWordLists();
-    expect(lists.nouns.length).toBeGreaterThanOrEqual(2000);
+    expect(lists.nouns.length).toBeGreaterThanOrEqual(500);
   });
 
-  test("verbs has 1000+ words", async () => {
+  test("verbs has 500+ words", async () => {
     const lists = await loadPOSWordLists();
-    expect(lists.verbs.length).toBeGreaterThanOrEqual(1000);
+    expect(lists.verbs.length).toBeGreaterThanOrEqual(500);
   });
 
-  test("adjectives has 1500+ words", async () => {
+  test("adjectives has 400+ words", async () => {
     const lists = await loadPOSWordLists();
-    expect(lists.adjectives.length).toBeGreaterThanOrEqual(1500);
+    expect(lists.adjectives.length).toBeGreaterThanOrEqual(400);
   });
 
-  test("adverbs has 300+ words", async () => {
+  test("adverbs has 100+ words", async () => {
     const lists = await loadPOSWordLists();
-    expect(lists.adverbs.length).toBeGreaterThanOrEqual(300);
+    expect(lists.adverbs.length).toBeGreaterThanOrEqual(100);
   });
 
   test("all words are non-empty lowercase strings", async () => {
