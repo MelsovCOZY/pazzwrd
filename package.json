@@ -1,6 +1,6 @@
 {
   "name": "pazzwrd",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generate strong passwords you can actually remember",
   "license": "GPL-3.0-only",
   "type": "module",
