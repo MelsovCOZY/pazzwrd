@@ -1,0 +1,39 @@
+{
+  "name": "pazzwrd",
+  "version": "1.0.2",
+  "description": "Generate strong passwords you can actually remember",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "bin": {
+    "pazzwrd": "./dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "wordlists/"
+  ],
+  "keywords": [
+    "password",
+    "generator",
+    "passphrase",
+    "cli",
+    "memorable",
+    "diceware",
+    "eff"
+  ],
+  "scripts": {
+    "start": "bun src/cli.ts",
+    "test": "bun test",
+    "test:ci": "bun test --filter '!e2e'",
+    "build": "bun build src/cli.ts --outdir dist --target node && sed -i '1s|#!/usr/bin/env bun|#!/usr/bin/env node|' dist/cli.js",
+    "prepublishOnly": "bun run build"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.10"
+  }
+}
