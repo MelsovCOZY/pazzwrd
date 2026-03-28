@@ -61,12 +61,12 @@ export async function runPrompts(): Promise<InteractiveConfig> {
           message: "How many words?",
           options: [
             { value: 3, label: "3" },
-            { value: 4, label: "4" },
-            { value: 5, label: "5 (recommended)" },
+            { value: 4, label: "4 (recommended)" },
+            { value: 5, label: "5" },
             { value: 6, label: "6" },
             { value: 7, label: "7" },
           ],
-          initialValue: 5,
+          initialValue: 4,
         }),
       separator: () =>
         p.select({

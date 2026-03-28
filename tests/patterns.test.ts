@@ -4,7 +4,7 @@ import type { POS, GrammarPattern } from "../src/patterns.ts";
 
 describe("PATTERNS", () => {
   test("all patterns have valid POS slots", () => {
-    const validPOS: POS[] = ["noun", "verb", "adjective", "adverb"];
+    const validPOS: POS[] = ["noun", "verb", "adjective"];
     for (const pattern of PATTERNS) {
       for (const slot of pattern.slots) {
         expect(validPOS).toContain(slot);

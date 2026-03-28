@@ -15,9 +15,9 @@ describe("default mode", () => {
     const result = await $`bun ${CLI}`.text();
     const passwordLine = result.trim().split("\n")[0]!;
     const password = passwordLine.trim();
-    // Pattern: Word[num][sym] x4 + Word (5 words, 4 separators)
+    // Pattern: Word[num][sym] x3 + Word (4 words, 3 separators)
     expect(password).toMatch(
-      /^([A-Z][a-z]+\d{2}[!@#$%&*]){4}[A-Z][a-z]+$/
+      /^([A-Z][a-z]+\d{2}[!@#$%&*]){3}[A-Z][a-z]+$/
     );
   });
 

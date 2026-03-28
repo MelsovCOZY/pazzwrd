@@ -133,7 +133,6 @@ const TEST_POS_LISTS = {
   nouns: ["falcon", "river", "castle", "tiger", "forest"],
   verbs: ["hunts", "finds", "guards", "seeks", "builds"],
   adjectives: ["brave", "golden", "silent", "dark", "keen"],
-  adverbs: ["boldly", "neatly", "softly", "deeply", "rarely"],
 };
 
 function makeSentenceConfig(
@@ -173,7 +172,6 @@ describe("generateSentencePassword", () => {
       ...TEST_POS_LISTS.nouns,
       ...TEST_POS_LISTS.verbs,
       ...TEST_POS_LISTS.adjectives,
-      ...TEST_POS_LISTS.adverbs,
     ];
     for (let i = 0; i < 50; i++) {
       const result = generateSentencePassword(
@@ -235,15 +233,13 @@ describe("generateSentencePassword", () => {
       nouns: ["falcon", "river", "castle"],
       verbs: ["hunts", "finds", "guards"],
       adjectives: ["swift", "brave", "golden"],
-      adverbs: ["boldly", "softly", "deeply"],
     };
     const posLookup: Record<string, string> = {};
     for (const w of posLists.nouns) posLookup[w] = "noun";
     for (const w of posLists.verbs) posLookup[w] = "verb";
     for (const w of posLists.adjectives) posLookup[w] = "adjective";
-    for (const w of posLists.adverbs) posLookup[w] = "adverb";
 
-    const allWords = [...posLists.nouns, ...posLists.verbs, ...posLists.adjectives, ...posLists.adverbs];
+    const allWords = [...posLists.nouns, ...posLists.verbs, ...posLists.adjectives];
 
     for (let i = 0; i < 50; i++) {
       const result = generateSentencePassword({

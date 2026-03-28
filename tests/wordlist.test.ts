@@ -57,37 +57,31 @@ describe("WORDLIST_META", () => {
 });
 
 describe("loadPOSWordLists", () => {
-  test("returns all four POS categories", async () => {
+  test("returns all three POS categories", async () => {
     const lists = await loadPOSWordLists();
     expect(lists.nouns.length).toBeGreaterThan(0);
     expect(lists.verbs.length).toBeGreaterThan(0);
     expect(lists.adjectives.length).toBeGreaterThan(0);
-    expect(lists.adverbs.length).toBeGreaterThan(0);
   });
 
-  test("nouns has 500+ words", async () => {
+  test("nouns has 2000+ words", async () => {
     const lists = await loadPOSWordLists();
-    expect(lists.nouns.length).toBeGreaterThanOrEqual(500);
+    expect(lists.nouns.length).toBeGreaterThanOrEqual(2000);
   });
 
-  test("verbs has 500+ words", async () => {
+  test("verbs has 1000+ words", async () => {
     const lists = await loadPOSWordLists();
-    expect(lists.verbs.length).toBeGreaterThanOrEqual(500);
+    expect(lists.verbs.length).toBeGreaterThanOrEqual(1000);
   });
 
-  test("adjectives has 400+ words", async () => {
+  test("adjectives has 2000+ words", async () => {
     const lists = await loadPOSWordLists();
-    expect(lists.adjectives.length).toBeGreaterThanOrEqual(400);
-  });
-
-  test("adverbs has 100+ words", async () => {
-    const lists = await loadPOSWordLists();
-    expect(lists.adverbs.length).toBeGreaterThanOrEqual(100);
+    expect(lists.adjectives.length).toBeGreaterThanOrEqual(2000);
   });
 
   test("all words are non-empty lowercase strings", async () => {
     const lists = await loadPOSWordLists();
-    for (const category of [lists.nouns, lists.verbs, lists.adjectives, lists.adverbs]) {
+    for (const category of [lists.nouns, lists.verbs, lists.adjectives]) {
       for (const word of category) {
         expect(word.length).toBeGreaterThan(0);
         expect(word).toBe(word.toLowerCase());

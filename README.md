@@ -29,7 +29,7 @@ npm install -g pazzwrd
 
 ```sh
 $ pazzwrd
-Brave42!Palace85#Flip29&Dry17*River
+Brave42!Palace85#Flip29&River
 ```
 
 One command, one password. Words follow grammar patterns for better memorability. Ready to paste.
@@ -53,10 +53,10 @@ Full customization through a step-by-step prompt:
 ## How It Works
 
 - Default mode uses **grammar patterns** — words follow sentence-like structures (adjective-noun-verb-noun) so passwords read more naturally and are easier to remember
-- Word lists are sourced from [EFF dice word lists](https://www.eff.org/dice) and POS-tagged English word lists (nouns, verbs, adjectives, adverbs)
+- Word lists are sourced from [EFF dice word lists](https://www.eff.org/dice) and hand-curated POS word lists (2,048 nouns, 2,048 adjectives, 1,024 verbs)
 - Randomness comes from `crypto.getRandomValues()` with rejection sampling to eliminate modulo bias
 - Interactive mode shows entropy and estimated time to crack so you can compare configs
-- Default config (~82 bits of entropy, ~150 million years to crack at 1 trillion guesses/sec)
+- Default config (~73 bits of entropy, ~3 centuries to crack at 1 trillion guesses/sec)
 
 ## Options
 

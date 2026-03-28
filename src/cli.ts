@@ -32,7 +32,7 @@ async function runDefaultMode() {
   const posLists = await loadPOSWordLists();
   const result = generateSentencePassword({
     posWordLists: posLists,
-    wordCount: 5,
+    wordCount: 4,
     separator: "mixed",
     capitalize: "yes",
   });
@@ -60,6 +60,6 @@ Options:
 
 Examples:
   $ pazzwrd
-  Brave42!Palace85#Flip29&Dry17*River
+  Brave42!Palace85#Flip29&River
 `);
 }

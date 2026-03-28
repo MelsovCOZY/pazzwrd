@@ -42,14 +42,12 @@ export interface POSWordLists {
   nouns: string[];
   verbs: string[];
   adjectives: string[];
-  adverbs: string[];
 }
 
 const POS_FILES: Record<POS, string> = {
   noun: "nouns.txt",
   verb: "verbs.txt",
   adjective: "adjectives.txt",
-  adverb: "adverbs.txt",
 };
 
 async function loadPOSFile(pos: POS): Promise<string[]> {
@@ -67,13 +65,12 @@ async function loadPOSFile(pos: POS): Promise<string[]> {
 }
 
 export async function loadPOSWordLists(): Promise<POSWordLists> {
-  const [nouns, verbs, adjectives, adverbs] = await Promise.all([
+  const [nouns, verbs, adjectives] = await Promise.all([
     loadPOSFile("noun"),
     loadPOSFile("verb"),
     loadPOSFile("adjective"),
-    loadPOSFile("adverb"),
   ]);
-  return { nouns, verbs, adjectives, adverbs };
+  return { nouns, verbs, adjectives };
 }
 
 export async function loadWordLists(names: WordListName[]): Promise<string[]> {

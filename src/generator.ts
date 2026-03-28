@@ -114,7 +114,6 @@ function getPoolForPOS(pos: POS, lists: POSWordLists): string[] {
     case "noun": return lists.nouns;
     case "verb": return lists.verbs;
     case "adjective": return lists.adjectives;
-    case "adverb": return lists.adverbs;
   }
 }
 
